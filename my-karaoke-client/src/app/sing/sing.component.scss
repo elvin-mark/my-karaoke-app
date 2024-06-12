@@ -1,0 +1,15 @@
+/* src/app/sing/sing.component.css */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .lyrics {
+    padding: 1rem;
+    background-color: #f3f4f6; /* Tailwind color gray-100 */
+    border-radius: 0.5rem; /* Tailwind rounded */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tailwind shadow-md */
+  }
+  

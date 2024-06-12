@@ -1,0 +1,24 @@
+from flask import Flask
+from karaoke import Karaoke
+
+app = Flask(__name__)
+core = Karaoke()
+
+@app.route("/")
+def home():
+    return ""
+
+@app.route("/api/songs",methods=["GET"])
+def list_songs():
+    return core.get_songs()
+
+@app.route("/api/upload",methods=["POST"])
+def new_song():
+    return core.add_new_song(None)
+
+@app.route("/api/song/{id}",methods=["GET"])
+def get_song(song_id:int):
+    return core.get_song(song_id)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0",port=8080)

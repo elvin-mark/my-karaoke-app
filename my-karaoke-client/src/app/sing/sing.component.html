@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 class="text-2xl font-bold mb-4">Sing Song</h1>
+  <div class="lyrics">
+    <!-- Lyrics and pitch guide will be displayed here -->
+    <p *ngFor="let line of lyrics" class="mb-2">{{ line }}</p>
+  </div>
+  <div class="controls mt-4">
+    <button
+      (click)="startSinging()"
+      class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors duration-300"
+    >
+      Start Singing
+    </button>
+  </div>
+</div>
