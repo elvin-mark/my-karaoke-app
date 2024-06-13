@@ -1,12 +1,14 @@
-from flask import Flask
+from flask import Flask, request
+from flask_cors import CORS
 from karaoke import Karaoke
 
 app = Flask(__name__)
+CORS(app)
 core = Karaoke()
 
 @app.route("/")
 def home():
-    return ""
+    return "Welcom to My Karaoke"
 
 @app.route("/api/songs",methods=["GET"])
 def list_songs():
@@ -21,4 +23,4 @@ def get_song(song_id:int):
     return core.get_song(song_id)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=8080)
+    app.run(host="0.0.0.0",port=5000)

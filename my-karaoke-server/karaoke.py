@@ -5,17 +5,18 @@ class Karaoke:
         self.songs = {}
         self.cursor = 0
     
-    def add_new_song(self,audio_src: any, sampling_rate: int = 16000) -> int:
+    def add_new_song(self,song_name:str, audio_src: any, sampling_rate: int = 16000) -> int:
         vocals, background = self.separate_vocals(audio_src,sampling_rate)
         pitch_info = self.get_pitch(vocals, sampling_rate)
         self.cursor += 1
         self.songs[self.cursor] = {
+            "song_name":song_name,
             "vocals": vocals,
             "background": background,
             "pitch_info": pitch_info,
             "sampling_rate":sampling_rate 
         }
-        pass
+        return self.cursor
 
     def get_songs(self) -> List[any]:
         return [v for v in self.songs.values()]

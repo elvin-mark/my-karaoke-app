@@ -1,0 +1,9 @@
+services:
+  my-karaoke-client:
+    image: tools/my-karaoke-client
+    ports:
+      - 8080:80
+  my-karaoke-server:
+    image: tools/my-karaoke-server
+    ports:
+      - 5000:5000
